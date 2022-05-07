@@ -1,0 +1,26 @@
+import { DataTypes } from "sequelize";
+import { sequelize } from "../database/database.js";
+
+export const Task = sequelize.define(
+  "task",
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    projectid: {
+      type: DataTypes.INTEGER,
+    },
+    name: {
+      type: DataTypes.STRING,
+    },
+    done: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+  },
+  {
+    timestamps: false,
+  }
+);
